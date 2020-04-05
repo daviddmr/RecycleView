@@ -17,13 +17,14 @@ class RecyclerViewModel : ViewModel() {
         return mList
     }
 
-    fun onScrollListener(mList: List<String>): RecyclerView.OnScrollListener {
+    fun onScrollListener(): RecyclerView.OnScrollListener {
         return object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
                 val mLinearLayoutManager: LinearLayoutManager = recyclerView.layoutManager as LinearLayoutManager
                 val myAdapter: MyAdapter = recyclerView.adapter as MyAdapter
+                val mList = myAdapter.itemList
 
                 if (mList.size == mLinearLayoutManager.findLastCompletelyVisibleItemPosition() + 1) {
                     val mListAux = getRandomList(10)
