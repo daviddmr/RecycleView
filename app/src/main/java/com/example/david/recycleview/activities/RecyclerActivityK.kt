@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.david.recycleview.R
-import com.example.david.recycleview.adapters.MyAdapter
+import com.example.david.recycleview.adapters.MyAdapterK
 import com.example.david.recycleview.viewModels.RecyclerViewModel
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
@@ -24,7 +24,7 @@ class RecyclerActivityK : AppCompatActivity() {
 
         val mList = viewModel.getRandomList(10)
 
-        val myAdapter = MyAdapter(this, mList)
+        val myAdapter = MyAdapterK(this, mList.toMutableList())
         rv_main_list.adapter = myAdapter
     }
 }
