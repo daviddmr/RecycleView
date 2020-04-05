@@ -1,8 +1,8 @@
-package com.example.david.recycleview.Activity;
+package com.example.david.recycleview.activities;
 
 import android.os.Bundle;
 
-import com.example.david.recycleview.Adapter.MyAdapter;
+import com.example.david.recycleview.adapters.MyAdapter;
 import com.example.david.recycleview.R;
 import com.example.david.recycleview.viewModels.RecyclerViewModel;
 

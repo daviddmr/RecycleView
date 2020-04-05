@@ -3,7 +3,7 @@ package com.example.david.recycleview.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.david.recycleview.Adapter.MyAdapter
+import com.example.david.recycleview.adapters.MyAdapter
 
 class RecyclerViewModel : ViewModel() {
 
