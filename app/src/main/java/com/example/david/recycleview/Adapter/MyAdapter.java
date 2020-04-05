@@ -8,31 +8,26 @@ import android.widget.TextView;
 
 import com.example.david.recycleview.R;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/**
- * Created by david on 31/01/2017.
- */
-
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    private String TAG = "TAG";
     private List<String> mList;
     private LayoutInflater mLayoutInflater;
-    private View.OnClickListener mListener;
 
     //Basic Constructor
     public MyAdapter(Context ctx, List<String> mList) {
         this.mList = mList;
         mLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        this.mListener = mListener;
     }
 
     //Called always that is needful create a new view
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NotNull ViewGroup parent, int viewType) {
         //Showing the item layout
         View view = mLayoutInflater.inflate(R.layout.item_list, parent, false);
 
@@ -58,6 +53,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         notifyItemInserted(position);
     }
 
+    public List<String> getItemList() {
+        return mList;
+    }
+
     //My customize view holder
     //Instantiating elements value from item layout
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -67,7 +66,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         MyViewHolder(View itemView) {
             super(itemView);
 
-            tvText = (TextView) itemView.findViewById(R.id.tv_text);
+            tvText = itemView.findViewById(R.id.tv_text);
         }
     }
 }
